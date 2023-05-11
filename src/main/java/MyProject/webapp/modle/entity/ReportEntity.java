@@ -12,27 +12,28 @@ public class ReportEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "report_name")
-    private String reportName;
-    @Column(name = "issue_id")
-    private int issueId;
-    @Column(name = "priority_id")
-    private int priorityId;
-    @Column(name = "status_id")
-    private int statusId;
-    @Column(name = "work_time")
-    private float workTime;
-    @Column(name = "word_date")
-    private Date wordDate;
-    @Column(name = "description")
-    private String description;
+    @Column(name = "member")
+    private String member;
+    @Column(name = "task_id")
+    private int taskId;
     @Column(name = "title")
     private String title;
-    @Column(name = "tickit_id")
-    private String tickitId;
-    @Column(name = "task_give_person")
-    private String taskGivePerson;
-    @Column(name = "parent_id")
-    private String parentId;
+    @Column(name = "issue")
+    private String issue;
+    @Column(name = "priority")
+    private int priority;
+    @Column(name = "status")
+    private int status;
+    @Column(name = "progress")
+    private String progress;
+    @Column(name = "link")
+    private String link;
+    @Column(name = "work_time")
+    private float work_time;
+    @Column(name = "work_date")
+    private Date workDate;
+    @Column(name = "created_date")
+    private Date createdDate;
+
 
 }

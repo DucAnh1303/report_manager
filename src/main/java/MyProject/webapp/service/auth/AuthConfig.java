@@ -1,4 +1,4 @@
-package MyProject.webapp.service;
+package MyProject.webapp.service.auth;
 
 
 import MyProject.webapp.modle.entity.AuthLoginEntity;

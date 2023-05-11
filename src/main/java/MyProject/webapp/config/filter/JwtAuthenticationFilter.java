@@ -1,6 +1,6 @@
 package MyProject.webapp.config.filter;
 
-import MyProject.webapp.service.AuthConfig;
+import MyProject.webapp.service.auth.AuthConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

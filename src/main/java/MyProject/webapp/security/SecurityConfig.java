@@ -3,7 +3,7 @@ package MyProject.webapp.security;
 import MyProject.webapp.config.cors.CorsConfiguration;
 import MyProject.webapp.config.filter.JwtAuthenticationEntryPoint;
 import MyProject.webapp.config.filter.JwtAuthenticationFilter;
-import MyProject.webapp.service.AuthConfig;
+import MyProject.webapp.service.auth.AuthConfig;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -53,8 +53,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/api/login").permitAll()
-                .antMatchers("/api/refresh-token").permitAll()
+                .antMatchers("/api/**").permitAll()
+//                .antMatchers("/api/login").permitAll()
+//                .antMatchers("/api/refresh-token").permitAll()
                 .anyRequest().authenticated();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint);
