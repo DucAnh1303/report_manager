@@ -2,7 +2,7 @@ package MyProject.webapp.controller;
 
 import MyProject.webapp.config.filter.JwtToken;
 import MyProject.webapp.modle.request.AuthLogin;
-import MyProject.webapp.modle.response.BaseResponse;
+import MyProject.webapp.response.response.BaseResponse;
 import MyProject.webapp.response.AuthResponse;
 import MyProject.webapp.service.auth.AuthConfig;
 import org.springframework.beans.factory.annotation.Autowired;

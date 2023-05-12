@@ -1,7 +1,6 @@
-package MyProject.webapp.modle.response.parameter;
+package MyProject.webapp.response.response.parameter;
 
 import MyProject.webapp.modle.entity.ParameterEntity;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

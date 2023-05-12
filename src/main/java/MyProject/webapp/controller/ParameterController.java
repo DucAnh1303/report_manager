@@ -1,6 +1,6 @@
 package MyProject.webapp.controller;
 
-import MyProject.webapp.modle.response.BaseResponse;
+import MyProject.webapp.response.response.BaseResponse;
 import MyProject.webapp.service.ParameterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

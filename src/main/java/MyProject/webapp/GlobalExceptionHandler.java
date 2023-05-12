@@ -1,7 +1,7 @@
 package MyProject.webapp;
 
 import MyProject.webapp.exception.ApiError;
-import MyProject.webapp.modle.response.BaseResponse;
+import MyProject.webapp.response.response.BaseResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
