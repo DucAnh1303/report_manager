@@ -40,12 +40,10 @@ public class ReportServiceImpl implements ReportService {
         return jdbcTemplate.query("{CALL get_report(" + pageSize + "," + offset + ")}", new BeanPropertyRowMapper<>(ReportProcudure.class));
     }
 
-    public List<ReportResponse> report(int pageSize, int pageNo) throws GeneralException {
+    public ReportResponse report(int pageSize, int pageNo) throws GeneralException {
         try {
             List<ReportProcudure> reportProcudures = getReport(pageSize, pageNo);
-            List<ReportResponse> responses = new ArrayList<>();
-            responses.add(new ReportResponse(reportProcudures));
-            return responses;
+            return new ReportResponse(reportProcudures);
         } catch (Exception exception) {
             throw new GeneralException(exception);
         }

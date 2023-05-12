@@ -9,6 +9,6 @@ import MyProject.webapp.response.response.report.ReportResponse;
 import java.util.List;
 
 public interface ReportService {
-    List<ReportResponse> report(int pageSize, int pageNo) throws GeneralException;
+    ReportResponse report(int pageSize, int pageNo) throws GeneralException;
 
 }
