@@ -2,11 +2,13 @@ package MyProject.webapp.modle.request;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
 public class ReportRequest {
     private String member;
+    @NotNull
     private int taskId;
     private String title;
     private String issue;
