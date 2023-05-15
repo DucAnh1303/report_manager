@@ -2,6 +2,7 @@ package MyProject.webapp.controller;
 
 import MyProject.webapp.exception.GeneralException;
 import MyProject.webapp.modle.request.report.ReportRequest;
+import MyProject.webapp.modle.request.report.ReportRequestEdit;
 import MyProject.webapp.response.response.BaseResponse;
 import MyProject.webapp.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,10 @@ public class ReportController {
     @PostMapping("/report/add")
     public ResponseEntity<Object> add(@Valid @RequestBody ReportRequest request) throws GeneralException {
         return ResponseEntity.ok(new BaseResponse<>(HttpStatus.CREATED.value(), "add success", reportService.addReport(request)));
+    }
+
+    @PostMapping("/report/edit")
+    public ResponseEntity<Object> edit(@Valid @RequestBody ReportRequestEdit request) throws GeneralException {
+        return ResponseEntity.ok(new BaseResponse<>(HttpStatus.CREATED.value(), "add success", reportService.editReport(request)));
     }
 }
