@@ -17,6 +17,7 @@ import MyProject.webapp.until.DateUtil;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.text.ParseException;
 import java.util.*;
@@ -51,8 +52,10 @@ public class ReportServiceImpl implements ReportService {
                 List<ReportDetailResponse> reportDetailResponses = new ArrayList<>();
                 reportProcedures.stream().filter(procedure -> procedure.getId() == response.getId()).collect(Collectors.toList())
                         .forEach(p -> reportDetailResponses.add(new ReportDetailResponse(p)));
-                response.setTotalTime((float) reportDetailResponses.stream().mapToDouble(ReportDetailResponse::getRealTime).sum());
-                response.setContents(reportDetailResponses);
+                if (!CollectionUtils.isEmpty(reportDetailResponses)) {
+                    response.setTotalTime((float) reportDetailResponses.stream().mapToDouble(ReportDetailResponse::getRealTime).sum());
+                    response.setContents(reportDetailResponses);
+                }
             }
             return getReports;
         } catch (Exception exception) {

@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Data
 @Table(name = "member")
 @Entity
-public class groupEntity {
+public class GroupEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
