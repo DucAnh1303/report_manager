@@ -12,8 +12,6 @@ public class ReportDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "member")
-    private String member;
     @Column(name = "report_id")
     private int reportId;
     @Column(name = "title")
@@ -36,4 +34,6 @@ public class ReportDetailEntity {
     private float realTime;
     @Column(name = "work_date")
     private Date workDate;
+    @Column(name = "member_id")
+    private int memberId;
 }

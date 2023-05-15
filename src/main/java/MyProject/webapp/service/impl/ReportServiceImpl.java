@@ -93,10 +93,10 @@ public class ReportServiceImpl implements ReportService {
             ReportDetailEntity reportDetailEntity = new ReportDetailEntity();
             reportDetailEntity.setReportId(reportId);
             reportDetailEntity.setTitle(detailRequest.getTitle());
-            reportDetailEntity.setFunctionId(detailRequest.getFunction());
+            reportDetailEntity.setFunctionId(detailRequest.getFunctionId());
             reportDetailEntity.setIssue(detailRequest.getIssue());
-            reportDetailEntity.setStatusId(detailRequest.getStatus());
-            reportDetailEntity.setPriorityId(detailRequest.getPriority());
+            reportDetailEntity.setStatusId(detailRequest.getStatusId());
+            reportDetailEntity.setPriorityId(detailRequest.getPriorityId());
             reportDetailEntity.setWorkTime(detailRequest.getTotalTime());
             reportDetailEntity.setRealTime(detailRequest.getRealTime());
             reportDetailEntity.setWorkDate(DateUtil.formatStringToDate(detailRequest.getWorkDate(), "yyyy-MM-dd"));
@@ -109,17 +109,31 @@ public class ReportServiceImpl implements ReportService {
         List<ReportDetailEntity> detailEntities = new ArrayList<>();
         for (ReportRequestEditDetail detailRequest : request.getContents()) {
             ReportDetailEntity reportDetailEntity = new ReportDetailEntity();
-            reportDetailEntity.setId(detailRequest.getIdDetail());
-            reportDetailEntity.setReportId(reportId);
-            reportDetailEntity.setTitle(detailRequest.getTitle());
-            reportDetailEntity.setFunctionId(detailRequest.getFunction());
-            reportDetailEntity.setIssue(detailRequest.getIssue());
-            reportDetailEntity.setStatusId(detailRequest.getStatus());
-            reportDetailEntity.setPriorityId(detailRequest.getPriority());
-            reportDetailEntity.setWorkTime(detailRequest.getTotalTime());
-            reportDetailEntity.setRealTime(detailRequest.getRealTime());
-            reportDetailEntity.setWorkDate(DateUtil.formatStringToDate(detailRequest.getWorkDate(), "yyyy-MM-dd"));
-            detailEntities.add(reportDetailEntity);
+            if (detailRequest.getIdDetail() > 0) {
+                reportDetailEntity.setId(detailRequest.getIdDetail());
+                reportDetailEntity.setReportId(reportId);
+                reportDetailEntity.setTitle(detailRequest.getTitle());
+                reportDetailEntity.setFunctionId(detailRequest.getFunction());
+                reportDetailEntity.setIssue(detailRequest.getIssue());
+                reportDetailEntity.setStatusId(detailRequest.getStatus());
+                reportDetailEntity.setPriorityId(detailRequest.getPriority());
+                reportDetailEntity.setWorkTime(detailRequest.getTotalTime());
+                reportDetailEntity.setRealTime(detailRequest.getRealTime());
+                reportDetailEntity.setWorkDate(DateUtil.formatStringToDate(detailRequest.getWorkDate(), "yyyy-MM-dd"));
+                detailEntities.add(reportDetailEntity);
+            } else {
+                reportDetailEntity.setReportId(reportId);
+                reportDetailEntity.setTitle(detailRequest.getTitle());
+                reportDetailEntity.setFunctionId(detailRequest.getFunction());
+                reportDetailEntity.setIssue(detailRequest.getIssue());
+                reportDetailEntity.setStatusId(detailRequest.getStatus());
+                reportDetailEntity.setPriorityId(detailRequest.getPriority());
+                reportDetailEntity.setWorkTime(detailRequest.getTotalTime());
+                reportDetailEntity.setRealTime(detailRequest.getRealTime());
+                reportDetailEntity.setWorkDate(DateUtil.formatStringToDate(detailRequest.getWorkDate(), "yyyy-MM-dd"));
+                detailEntities.add(reportDetailEntity);
+            }
+
         }
         return detailEntities;
     }

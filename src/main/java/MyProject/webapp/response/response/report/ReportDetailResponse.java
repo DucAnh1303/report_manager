@@ -18,6 +18,7 @@ public class ReportDetailResponse {
     private float workTime;
     private String workDate;
     private float realTime;
+    private int memberId;
 
     public ReportDetailResponse(ReportProcedure reportProcedure) {
         this.id = reportProcedure.getDetailId();
@@ -28,6 +29,7 @@ public class ReportDetailResponse {
         this.workTime = reportProcedure.getWorkTime();
         this.workDate = reportProcedure.getWorkDate();
         this.realTime = reportProcedure.getRealTime();
+        this.memberId = reportProcedure.getMemberId();
     }
 
     public ReportDetailResponse(ReportDetailEntity reportDetailEntity) {
@@ -38,5 +40,6 @@ public class ReportDetailResponse {
         this.link = reportDetailEntity.getLink();
         this.workTime = reportDetailEntity.getWorkTime();
         this.workDate = DateUtil.dateToString(reportDetailEntity.getWorkDate(), "yyyy-MM-dd");
+        this.memberId = reportDetailEntity.getMemberId();
     }
 }

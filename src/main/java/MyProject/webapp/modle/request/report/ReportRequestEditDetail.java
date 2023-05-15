@@ -13,4 +13,5 @@ public class ReportRequestEditDetail {
     private float totalTime;
     private float realTime;
     private String workDate;
+    private int memberId;
 }

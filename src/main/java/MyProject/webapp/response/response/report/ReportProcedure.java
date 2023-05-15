@@ -21,4 +21,5 @@ public class ReportProcedure {
     private String link;
     private float workTime;
     private String workDate;
+    private int memberId;
 }
