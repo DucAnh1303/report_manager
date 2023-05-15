@@ -4,16 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotNull;
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReportProcudure {
+public class ReportProcedure {
     private int id;
     private int taskId;
+    private int detailId;
     private float totalTime;
+    private float realTime;
     private String title;
     private String issue;
     private int priority;

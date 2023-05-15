@@ -13,7 +13,7 @@ public class ReportEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "task_id")
-    private String taskId;
+    private int taskId;
     @Column(name = "created_date")
     private Date createdDate;
 }

@@ -1,14 +1,14 @@
 package MyProject.webapp.service;
 
 import MyProject.webapp.exception.GeneralException;
-import MyProject.webapp.modle.request.ReportRequest;
-import MyProject.webapp.response.response.report.ReportDetailResponse;
-import MyProject.webapp.response.response.report.ReportProcudure;
+import MyProject.webapp.modle.request.report.ReportRequest;
 import MyProject.webapp.response.response.report.ReportResponse;
 
-import java.util.List;
+import java.util.Set;
 
 public interface ReportService {
-    ReportResponse report(int pageSize, int pageNo) throws GeneralException;
+    Set<ReportResponse> report(int pageSize, int pageNo) throws GeneralException;
+
+    ReportResponse addReport(ReportRequest request) throws GeneralException;
 
 }

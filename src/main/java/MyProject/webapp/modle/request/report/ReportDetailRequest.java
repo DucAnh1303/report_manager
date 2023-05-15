@@ -1,4 +1,4 @@
-package MyProject.webapp.modle.request;
+package MyProject.webapp.modle.request.report;
 
 import lombok.Data;
 
