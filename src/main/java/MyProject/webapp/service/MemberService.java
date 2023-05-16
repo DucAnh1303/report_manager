@@ -1,4 +1,4 @@
 package MyProject.webapp.service;
 
-public class MemberServiceImpl {
+public interface MemberService {
 }
